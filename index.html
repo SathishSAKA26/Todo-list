@@ -4,15 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDo-list</title>
+    <title>TODO-APP</title>
     <!-- custom css -->
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="main-container" id="main"></div>
-    <button class="btn" id="Submit">Submit</button>
+    <div class="input-container">
+      <input type="text" placeholder="Enter the item..." id="input" />
+      <button class="btn-submit" id="btn">Click Me</button>
+    </div>
 
-    <div class="output-container"></div>
+    <div class="output-container">
+      <ul class="list">
+        <li class="list-item" id="list-item">list#1</li>
+      </ul>
+    </div>
 
     <!-- link in script -->
     <script src="./script.js"></script>
