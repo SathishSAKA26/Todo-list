@@ -18,6 +18,12 @@ li{
   list-style: none;
 }
 
+.input-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 #input{
   padding: 0.85rem 2rem;
   font-size: 1.1rem;
@@ -35,14 +41,11 @@ li{
   color: azure;
 }
 
-.output-container{
+
+.list{
+  padding: 2rem 7rem;
   font-size: 2rem;
   border: 5px solid #272928;
   border-color: chocolate;
   color: crimson;
-}
-
-
-.list{
-  padding: 5rem 4rem;
 }
