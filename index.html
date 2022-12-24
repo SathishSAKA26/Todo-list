@@ -9,15 +9,28 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="input-container">
-      <input type="text" placeholder="Enter the item..." id="input" />
+    <form class="input-container" id="form-submit">
+      <input
+        type="text"
+        placeholder="Enter the item..."
+        name="name"
+        id="input"
+      />
 
-      <input type="text" placeholder="Enter the quantity..." id="input" />
+      <input
+        type="text"
+        placeholder="Enter the quantity..."
+        name="quantity"
+        id="quantity"
+      />
 
       <button class="btn-submit" id="btn">Submit</button>
-    </div>
+    </form>
 
-    <ul class="list" id="list-item"></ul>
+    <ul class="list" id="list-item">   
+
+
+    </ul>
 
     <!-- link in script -->
     <script src="./script.js"></script>

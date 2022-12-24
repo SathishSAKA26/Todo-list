@@ -7,6 +7,10 @@
 body {
   width: 100%;
   height: 100vh;
+  background-image: url("./sdfsd-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,24 +18,26 @@ body {
   justify-content: space-around;
 }
 
-li{
+li {
   list-style: none;
 }
 
-.input-container{
+.input-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-#input{
+#input,
+#quantity {
   padding: 0.85rem 2rem;
   font-size: 1.1rem;
   border-radius: 15px;
   border-color: brown;
+  background-color: rgba(241, 235, 227, 0.774);
 }
 
-.btn-submit{
+.btn-submit {
   padding: 0.85rem 2rem;
   font-size: 1.1rem;
   border-radius: 15px;
@@ -41,11 +47,12 @@ li{
   color: azure;
 }
 
-
-.list{
-  padding: 2rem 7rem;
+.list {
+  padding: 1.5rem 4rem;
   font-size: 2rem;
+  font-weight: 700;
   border: 5px solid #272928;
-  border-color: chocolate;
-  color: crimson;
+  border-color: rgb(190, 128, 84);
+  background-color: rgba(240, 248, 255, 0.39);
+  color: rgb(32, 2, 116);
 }
