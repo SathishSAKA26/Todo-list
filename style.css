@@ -45,6 +45,8 @@ li {
   background-color: brown;
   font-weight: 800;
   color: azure;
+
+  cursor: pointer;
 }
 
 .list {
@@ -58,11 +60,11 @@ li {
 }
 
 .list button {
-  padding:  0.75rem;
-  font-size: 1.1rem;
+  padding: 0.6rem;
+  background-color: brown;
   border-radius: 15px;
   border-color: brown;
-  background-color: brown;
-  font-weight: 800;
-  color: azure;
+  margin-left: 1rem;
+
+  cursor: pointer;
 }
