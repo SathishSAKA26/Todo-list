@@ -7,10 +7,11 @@
 body {
   width: 100%;
   height: 100vh;
-  background-image: url("./sdfsd-1.jpg");
+  /* background-image: url("./sdfsd-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  background-color: aqua;
   display: flex;
   flex-direction: column;
   align-items: center;
