@@ -3,7 +3,7 @@
 // get elements
 const titleEl = document.getElementById("input");
 const formEl = document.getElementById("form-submit");
-const containerEl = document.getElementById('list-item')
+const containerEl = document.getElementById("list-item");
 // const quantityEl = document.getElementById("quantity");
 // const outputEl = document.getElementById("list-item");
 
@@ -13,20 +13,27 @@ const containerEl = document.getElementById('list-item')
 //   {title: 'apple'}
 // ];
 
-const task = [
-  {title: 'apple'},
-  {title: 'banana'},
-  {title: 'oranges'}
-];
+const task = [{ title: "apple" }, { title: "banana" }, { title: "oranges" }];
 
-
+task.forEach(task) => {
+  const taskEl = document.createElement(li);
+  taskEl.classList.add('list-item');
+  taskEl.innerText = `${task.title}`;
+  containerEl.appendChild(taskEl); 
+}
 
 // // addEventListener
 
-// formEl.addEventListener("submit", function (e) {
-//   e.preventDefault();
-//   if()
-//   // const quantity = quantityEl.value;
+formEl.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const title = titleEl.value;
+
+  const task = {
+    id: 1;
+    taskName: title;
+  };
+
+});
 
 //   const list = document.createElement("li");
 
@@ -41,4 +48,3 @@ const task = [
 //   // <button><i class="fa-sharp fa-solid fa-trash-xmark"><i></button> `
 
 //   outputEl.appendChild(list);
-// });
