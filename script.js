@@ -1,56 +1,11 @@
-"use strcat";
-
-// // get elements
-// const titleEl = document.getElementById("input");
-// const formEl = document.getElementById("form-submit");
-// const containerEl = document.getElementById("list-item");
-// // const quantityEl = document.getElementById("quantity");
-// // const outputEl = document.getElementById("list-item");
-
-// // initial element
-
-// const task = [];
-
-// task.forEach((task)=> {
-//   const taskEl = document.createElement(li);
-//   taskEl.classList.add('list-item');
-//   taskEl.innerHTML = `${task}`;
-//   containerEl.appendChild(taskEl); 
-// })
-
-// // // addEventListener
-
-// formEl.addEventListener("submit", function (e) {
-//   e.preventDefault();
-//   const title = titleEl.value;
-
-//   const task = {
-//     id: 1;
-//     taskName: title;
-//   };
-
-// });
-
-// //   const list = document.createElement("li");
-
-// //   list.innerHTML = `${listName}
-// //   <button class='btn-edit' onclick='editItem'><i class="fa-solid fa-pen-to-square"></i>
-// //   </button>
-// //   <button class='btn-delete' onclick='deleteItem'><i class="fa-solid fa-trash"></i></i>
-// //   </button>`;
-
-// //   // - ${quantity}
-// //   // <button><i class="fa-sharp fa-solid fa-upload"><i><button>
-// //   // <button><i class="fa-sharp fa-solid fa-trash-xmark"><i></button> `
-
-// //   outputEl.appendChild(list);
+"use strict";
 
 // get elements
-const inputEl = document.getElementById('input');
+const inputEl = document.getElementById("input");
 // const quantityEl = document.getElementById('quantity');
-const formEl = document.getElementById('form-submit');
-const todoLiEl = document.getElementById('todo-list');
-const btnEl= document.getElementById('btn-submit');
+const formEl = document.getElementById("form-submit");
+const todoLiEl = document.getElementById("todo-list");
+const btnEl = document.getElementById("btn-submit");
 
 // initial elements
 let tasks = [];
@@ -58,18 +13,90 @@ let isEditing = false;
 let editId = null;
 
 // Function
-function init(){
+function init() {
   isEditing = false;
   editId = null;
-  btnEl.innerText = 'submit';
+  btnEl.innerText = "submit";
 }
 
 init();
 
-// update ui
-const updateUi = function(){
+// UpdateUi function
+const updateUi = function () {
   todoLiEl.innerHTML = null;
-  tasks.forEach((task)=>{
-    
-  })
-}
+  tasks.forEach((task) => {
+    const taskEl = document.createElement("li");
+    taskEl.innerHTML = `${task.taskName}<button class='btn-update' onclick = updateItem(${task.id})>
+      <i class="fa-solid fa-pen-to-square"></i>
+  </button> 
+   <button
+    class='btn-delete' onclick = deleteItem(${task.id})>
+   <i class="fa-solid fa-trash"></i>
+   </button>`;
+
+    todoLiEl.appendChild(taskEl);
+  });
+};
+
+// delete function
+const deleteItem = function (id) {
+  tasks = tasks.filter((task) => {
+    return task.id !== id;
+  });
+  updateUi();
+};
+
+// Update function
+const updateItem = function (id) {
+  isEditing = true;
+  btnEl.innerHTML = "update";
+
+  // find the element to update
+  const itemToEdit = tasks.find((task) => {
+    return task.id === id;
+  });
+
+  inputEl.value = itemToEdit.taskName;
+  editId = itemToEdit.id;
+};
+
+// Event listener from
+formEl.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const title = inputEl.value;
+
+  if (isEditing) {
+    tasks = tasks.map((task) => {
+      if (task.id === editId) {
+        return {
+          id: editId,
+          taskName: title,
+        };
+      } else {
+        return task;
+      }
+    });
+
+    // initial setting
+    init();
+    // update UI
+    updateUi();
+  } else {
+    // create object
+    const task = {
+      // create random id
+      id: Date.now(),
+      taskName: title,
+    };
+
+    // add task push in object
+    tasks.push(task);
+  }
+
+  // Display update UI
+  updateUi();
+
+  // clear input value
+  inputEl.value = null;
+});
