@@ -64,6 +64,10 @@ const updateItem = function (id) {
 formEl.addEventListener("submit", function (event) {
   event.preventDefault();
 
+  if (inputEl.value.trim() === "") {
+    alert("Please enter the Item 😜");
+  }
+
   const title = inputEl.value;
 
   if (isEditing) {
